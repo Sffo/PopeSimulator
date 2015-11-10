@@ -1,0 +1,213 @@
+
+#include "TXLib.h"
+void Bonfire                    (int x, int y, double zoom, int leftxxxx, int leftxxx, int leftxx, int leftx, int left, int rghtxxxx, int rghtxxx, int rghtxx, int rghtx, int rght, double red, double green, double blue, double red1, double green1, double blue1, double red2, double green2, double blue2);
+void Inquisitor                 ();
+void Vatican                    ();
+void HolyThrone                 ();
+void Pope                       ();
+void SwissGuard                 ();
+void Herald                     ();
+void Executioner                ();
+void Public                     ();
+void Doctor                     ();
+void Leper                      ();
+void ManModel                   ();
+void Witch                      ();
+void Soul                       ();
+void Mage                       ();
+void Peasant                    ();
+void Theologist                 ();
+void HereticTeoligist           ();
+void Alchemist                  ();
+void Necromancer                ();
+void Heathen                    ();
+void HellenicHeathen            ();
+void HellenicPriest             ();
+void HellenicGrandPriest        ();
+void HellenicEmperor            ();
+//=============================================================================
+void St                         (int x, int y, double red, double green, double blue, double redline, double greenline, double blueline);
+bool Clr                        (double red, double green, double blue);
+bool FillClr                    (double red, double green, double blue);
+void Cl                         ();
+void Wnd                        (double x, double y);
+void Ln                         (double x, double y, double x1, double y1);
+void Rect                       (double x, double y, double x1, double y1);
+void Sq                         (double x, double y, double side);
+//=============================================================================
+//=============================================================================
+void St                         (int x, int y, double red, double green, double blue, double redline, double greenline, double blueline)
+    {
+    Wnd                         (x    , y                                                                                             );//
+    Clr                         (                                                     redline       , greenline       , blueline       );//
+    FillClr                     (              red       , green       , blue                                                               );//
+    Cl                          (                                                                                                        );//
+    }
+//=============================================================================
+//=============================================================================
+bool Clr                        (double red, double green, double blue)
+    {
+    txColor                     (red       , green       , blue       );//
+    }
+//=============================================================================
+//=============================================================================
+bool FillClr                    (double red, double green, double blue)
+    {
+    txFillColor                 (red       , green       , blue       );//
+    }
+//=============================================================================
+//=============================================================================
+void Cl                         ()
+    {
+    txClear                     ();//
+    }
+//=============================================================================
+//=============================================================================
+void Wnd                        (double x, double y)
+    {
+    txCreateWindow              (x       ,        y);//
+    }
+//=============================================================================
+//=============================================================================
+void Ln                         (double x, double y, double x1, double y1)
+    {
+    txGDI                       ((Win32::MoveToEx (txDC(), ROUND (x) , ROUND (y) , NULL))) asserted;
+    txGDI                       ((Win32::LineTo   (txDC(), ROUND (x1), ROUND (y1)      ))) asserted;
+    }
+//=============================================================================
+//=============================================================================
+void Rect                       (double x, double y, double x1, double y1)
+    {
+    txGDI                       ((Win32::Rectangle (txDC(), ROUND (x), ROUND (y), ROUND (x1), ROUND (y1)))) asserted;
+    }
+//=============================================================================
+//=============================================================================
+void Sq                         (double x, double y, double side)
+    {
+    Rect                        (x       , y       , x + side, y + side);
+    }
+//=============================================================================
+//=============================================================================
+void Bonfire                    (int x, int y, double zoom, int leftxxxx, int leftxxx, int leftxx, int leftx, int left, int rghtxxxx, int rghtxxx, int rghtxx, int rghtx, int rght, double red, double green, double blue, double red1, double green1, double blue1, double red2, double green2, double blue2)
+    {
+
+    FillClr                 (red , green , blue                                    );
+    Clr                         (red , green , blue                                    );
+    Rect                        (x           , y           , x + 190*zoom, y - 60 *zoom);
+    Rect                        (x + 10 *zoom, y - 60 *zoom, x + 180*zoom, y - 90 *zoom);
+    Rect                        (x + 20 *zoom, y - 90 *zoom, x + 170*zoom, y - 120*zoom);
+    Rect                        (x + 30 *zoom, y - 120*zoom, x + 160*zoom, y - 130*zoom);
+    Rect                        (x + 40 *zoom, y - 130*zoom, x + 150*zoom, y - 150*zoom);
+    Rect                        (x + 50 *zoom, y - 150*zoom, x + 140*zoom, y - 160*zoom);
+    Rect                        (x + 60 *zoom, y - 160*zoom, x + 130*zoom, y - 180*zoom);
+    Rect                        (x + 70 *zoom, y - 180*zoom, x + 120*zoom, y - 190*zoom);
+    Rect                        (x + 80 *zoom, y - 190*zoom, x + 110*zoom, y - 210*zoom);
+    Rect                        (x + 90 *zoom, y - 210*zoom, x + 100*zoom, y - 230*zoom);
+    FillClr                     (red1, green1, blue1                                   );
+    Clr                         (red1, green1, blue1                                   );
+    Rect                        (x + 10 *zoom, y           , x + 180*zoom, y - 50 *zoom);
+    Rect                        (x + 20 *zoom, y - 50 *zoom, x + 170*zoom, y - 70 *zoom);
+    Rect                        (x + 30 *zoom, y - 70 *zoom, x + 160*zoom, y - 110*zoom);
+    Rect                        (x + 40 *zoom, y - 110*zoom, x + 150*zoom, y - 130*zoom);
+    Rect                        (x + 50 *zoom, y - 130*zoom, x + 140*zoom, y - 140*zoom);
+    Rect                        (x + 60 *zoom, y - 140*zoom, x + 130*zoom, y - 160*zoom);
+    Rect                        (x + 70 *zoom, y - 160*zoom, x + 120*zoom, y - 170*zoom);
+    Rect                        (x + 80 *zoom, y - 170*zoom, x + 110*zoom, y - 180*zoom);
+    Rect                        (x + 90 *zoom, y - 180*zoom, x + 100*zoom, y - 200*zoom);
+    FillClr                     (red2, green2, blue2                                   );
+    Clr                         (red2, green2, blue2                                   );
+    Rect                        (x + 30 *zoom, y           , x + 160*zoom, y - 40 *zoom);
+    Rect                        (x + 40 *zoom, y - 40 *zoom, x + 150*zoom, y - 60 *zoom);
+    Rect                        (x + 50 *zoom, y - 60 *zoom, x + 140*zoom, y - 100*zoom);
+    Rect                        (x + 60 *zoom, y - 100*zoom, x + 130*zoom, y - 120*zoom);
+    Rect                        (x + 70 *zoom, y - 120*zoom, x + 120*zoom, y - 130*zoom);
+    Rect                        (x + 80 *zoom, y - 130*zoom, x + 110*zoom, y - 150*zoom);
+    Rect                        (x + 90 *zoom, y - 150*zoom, x + 100*zoom, y - 160*zoom);
+    Rect                        (x + 90 *zoom, y - 160*zoom, x + 100*zoom, y - 170*zoom);
+    FillClr                     (0   , 0     , 0                                       );
+    Clr                         (0   , 0     , 0                                       );
+    Rect                        (x + 50 *zoom, y           , x + 140*zoom, y - 40 *zoom);
+    Rect                        (x + 60 *zoom, y - 40 *zoom, x + 130*zoom, y - 80 *zoom);
+    Rect                        (x + 70 *zoom, y - 80 *zoom, x + 120*zoom, y - 100*zoom);
+    Rect                        (x + 80 *zoom, y - 100*zoom, x + 110*zoom, y - 120*zoom);
+    Rect                        (x + 90 *zoom, y - 120*zoom, x + 100*zoom, y - 130*zoom);
+    Rect                        (x + 90 *zoom, y - 130*zoom, x + 100*zoom, y - 270*zoom);
+
+    Sq                          (x + 45 *zoom, y            - leftxxxx *10, 5);
+    Sq                          (x + 55 *zoom, y - 40 *zoom - leftxxx  *10, 5);
+    Sq                          (x + 65 *zoom, y - 80 *zoom - leftxx   *10, 5);
+    Sq                          (x + 75 *zoom, y - 100*zoom - leftx    *10, 5);
+    Sq                          (x + 85 *zoom, y - 140*zoom - left     *10, 5);
+    Sq                          (x + 140*zoom, y            - rghtxxxx *10, 5);
+    Sq                          (x + 130*zoom, y - 40 *zoom - rghtxxx  *10, 5);
+    Sq                          (x + 120*zoom, y - 80 *zoom - rghtxx   *10, 5);
+    Sq                          (x + 110*zoom, y - 100*zoom - rghtx    *10, 5);
+    Sq                          (x + 100*zoom, y - 140*zoom - rght     *10, 5);
+
+
+
+
+
+    }
+//=============================================================================
+//=============================================================================
+void ManModel                   (int x, int y, double zoom)
+    {
+    Clr                         (0, 0, 0);
+    Sq                          (x, y, 50*zoom);
+    Rect                        (x + 10, y + 50, x + 40, y + 60);
+    Rect                        (x + 10, y + 50, x + 40, y + 60);
+    Rect                        (x + 10, y + 50, x + 40, y + 60);
+    Rect                        (x + 10, y + 50, x + 40, y + 60);
+    Rect                        (x + 10, y + 50, x + 40, y + 60);
+    Rect                        (x + 10, y + 50, x + 40, y + 60);
+
+
+    }
+bool global ()
+    {
+    int t      = 0;
+    int tlllll = 1;
+    int tllll  = 1;
+    int tlll   = 1;
+    int tll    = 1;
+    int tl     = 1;
+    int tr     = 1;
+    int trr    = 1;
+    int trrr   = 1;
+    int trrrr  = 1;
+    int trrrrr = 1;
+    St                          (1500, 800, 255, 255, 255, 0, 0, 0);
+    while (t <= 21)
+        {
+
+        ManModel                (700, 200, 1);
+        tlllll++;
+        tllll++;
+        tlll++;
+        tll++;
+        tl++;
+        tr++;
+        trr++;
+        trrr++;
+        trrrr++;
+        trrrrr++;
+        Bonfire                 (300, 500, 1, tlllll, tllll, tlll, tll, tl, tr, trr, trrr, trrrr, trrrrr, 1, 1, 0, 1, 0.8, 0.3, 1, 0.07, 0.2);
+        txSleep                 (100);
+        FillClr                 (1, 1, 1);
+        Cl ();
+        if (t == 20)
+        {
+        t = 0;
+        };
+
+        t++;
+
+        };
+    }
+
+
+
+
+
+
